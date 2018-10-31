@@ -1,0 +1,5 @@
+*.model
+target/
+nbproject/
+nbactions.xml
+data/
