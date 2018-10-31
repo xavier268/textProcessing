@@ -1,7 +1,7 @@
 #!/bin/bash
 
 URLS=target.list
-CORPUS=abuCorpus.utf8
+CORPUS=data/abuCorpus.utf8
 
 echo "This script will download the raw texts from the site www.abu.cnam.fr"
 

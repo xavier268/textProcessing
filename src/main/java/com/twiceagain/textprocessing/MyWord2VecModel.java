@@ -93,14 +93,13 @@ public class MyWord2VecModel {
         // Build MODELPATH
         vec = new Word2Vec.Builder()
                 .minWordFrequency(5)
-                .iterations(3)
-                .layerSize(200)
+                .iterations(1)
+                .layerSize(150)
                 .seed(42)
-                .windowSize(6)
+                .windowSize(5)
                 .iterate(iter)
                 .tokenizerFactory(t)
                 .stopWords(STOPLIST)
-                .usePreciseWeightInit(true)
                 .build();
 
         LOG.info("Fitting model ...");
@@ -130,6 +129,6 @@ public class MyWord2VecModel {
      */
     public String q(List<String> pos, List<String> neg, int nb) { 
         if(pos.isEmpty() && neg.isEmpty()) return "You need at least a word ?";        
-        return String.join(", ", vec.wordsNearest(pos, neg, nb));
+        return String.join(", ", vec.wordsNearest(pos, neg, nb)) + " ?";
     }
 }
